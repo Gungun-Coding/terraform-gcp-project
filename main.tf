@@ -9,6 +9,7 @@ provider "google" {
 resource "google_compute_instance" "my_instance" {
     name = "instance-1"
     machine_type = "e2-medium"
+    zone = "us-east1-a"
     
     boot_disk {
         initialize_params {
