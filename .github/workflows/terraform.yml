@@ -8,6 +8,9 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
 
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/key.json
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,10 +18,8 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v4
 
-      - name: Authenticate to GCP
-        run: |
-          echo '${{ secrets.GCP_KEY }}' > key.json
-          export GOOGLE_APPLICATION_CREDENTIALS=key.json
+      - name: Create GCP Key File
+        run: echo '${{ secrets.GCP_KEY }}' > ${{ github.workspace }}/key.json
 
       - name: Terraform Init
         run: terraform init
