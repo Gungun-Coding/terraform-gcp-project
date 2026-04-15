@@ -1,6 +1,6 @@
 provider "google" {
     project = "numeric-citron-484418-i4"
-    region = "us-east1"
+    region = "asia-south1"
   
 }
 
@@ -9,7 +9,7 @@ provider "google" {
 resource "google_compute_instance" "my_instance" {
     name = "instance-1"
     machine_type = "e2-medium"
-    zone = "us-east1-a"
+    zone = "asia-south1-a"
     
     boot_disk {
         initialize_params {
