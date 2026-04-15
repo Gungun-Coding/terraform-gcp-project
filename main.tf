@@ -1,6 +1,6 @@
 provider "google" {
-    project = numeric-citron-484418-i4
-    region = us-east1
+    project = "numeric-citron-484418-i4"
+    region = "us-east1"
   
 }
 
