@@ -21,9 +21,7 @@ jobs:
           export GOOGLE_APPLICATION_CREDENTIALS=key.json
 
       - name: Terraform Init
-        working-directory: terraform-gcp-project
         run: terraform init
 
       - name: Terraform Apply
-        working-directory: terraform-gcp-project
         run: terraform apply -auto-approve
